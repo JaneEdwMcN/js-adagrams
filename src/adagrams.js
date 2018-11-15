@@ -55,7 +55,8 @@ const Adagrams = {
     let result = true;
     inputArray.forEach(function(letter) {
       if (lettersInHandCopy.includes(letter)){
-        lettersInHandCopy.splice(letter, 1);
+        let index = lettersInHandCopy.indexOf(letter)
+        lettersInHandCopy.splice(index, 1);
       } else {
         result = false;
       }
