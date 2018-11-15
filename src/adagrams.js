@@ -61,6 +61,28 @@ const Adagrams = {
       }
     });
     return result;
+  },
+
+  scoreWord(word) {
+    const scoreChart = {
+      1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"	],
+      2: ["D", "G"],
+      3: ["B", "C", "M", "P"],
+      4: ["F", "H", "V", "W", "Y"],
+      5: ["K"],
+      8: ["J", "X"],
+      10: ["Q", "Z"]
+    }
+    let score = 0;
+
+    if (word.length > 6) score = 8;
+
+    word.toUpperCase().split("").forEach(function(letter) {
+      for (const property in scoreChart) {
+        if (scoreChart[property].includes(letter)) return score += +property
+      }
+    });
+    return score;
   }
 };
 
