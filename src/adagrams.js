@@ -83,6 +83,25 @@ const Adagrams = {
       }
     });
     return score;
+  },
+
+  highestScoreFrom(words) {
+    const highScore = {
+      word: null,
+      score: 0
+    };
+    words.sort(function(a, b){return a.length-b.length});
+    words.forEach((word) => {
+      let score = this.scoreWord(word);
+      if (score > highScore.score) {
+        highScore.score = score;
+        highScore.word = word;
+      } else if (score === highScore.score && word.length === 10 && highScore.word.length < 10) {
+        highScore.score = score;
+        highScore.word = word;
+      }
+    });
+    return highScore;
   }
 };
 
