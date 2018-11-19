@@ -41,14 +41,6 @@ const Adagrams = {
     }
     return pool;
   },
-
-  // NOTES FOR REGEX
-  // const drawn = ['D', 'O', 'G', 'X', 'X', 'X', 'X', 'X', 'X', 'X'];
-  // const word = 'GOOD';
-  // Must match the letters
-  // Can repeat if the letter is repeated
-  // Can't repeat if the letter is only there once
-
   usesAvailableLetters(input, lettersInHand) {
     const inputArray = input.split('');
     let lettersInHandCopy = lettersInHand.slice();
